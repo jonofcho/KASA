@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_scope :user do
-    root to: "devise/registrations#ne"
-  end
+  root "users#index"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources:users
