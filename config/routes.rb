@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :users
-  devise_for :users
   devise_scope :user do
     root to: "devise/registrations#new"
   end
+
+  devise_for :users, :controllers => { :registrations => "registrations" }
+  resources:users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
