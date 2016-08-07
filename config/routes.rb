@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'organizations/show'
+
+  get 'organizations/index'
+
   root "users#index"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   resources:users
+  resources:organizations
 
   get '/profile' => 'users#profile'
 
