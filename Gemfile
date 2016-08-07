@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'materialize-sass'
 gem 'hirb'
 gem 'devise'
