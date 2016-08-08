@@ -74,6 +74,12 @@
           </div>
         </div>
       </div>
+      <div class="create">
+        <form class="organization" action="/organizations" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="text" name="organization[]" value="">
+        </form>
+      </div>
    </div>
     </div>
   </body>
