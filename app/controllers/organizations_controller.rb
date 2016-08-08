@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
   def show
+    @org = Organization.find_by_id(params[:id])
   end
 
   def index
