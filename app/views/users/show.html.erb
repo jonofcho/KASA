@@ -74,7 +74,32 @@
           </div>
         </div>
       </div>
+      <% @org.each do |o| %>
+      <div class="col s9">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+           <div class="card-panel grey lighten-5 z-depth-1">
+             <div class="row valign-wrapper">
+               <div class="col s2">
+                 <img src="" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+               </div>
+               <div class="col s10">
+                 <span class="black-text">
+                   <%= o.name %>
+                 </span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <%end%>
    </div>
+   <form class="" action="/organizations" method="post">
+     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+     <input type="hidden" name="organization[user_id]" value="<%=@user.id%>">
+     <input type="text" name="organization[name]" value="">
+     <input type="text" name="organization[school_origin]" value="">
+     <input type="submit" name="name" value="Go">
+   </form>
     </div>
   </body>
 </html>
