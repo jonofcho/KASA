@@ -8,12 +8,9 @@
     <div class="container">
       <header>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-        <p>
-              Hello! <%=@user.email%>
-        </p>
       <nav>
          <div class="nav-wrapper">
-           <a href="#" class="brand-logo">Logo</a>
+           <a href="#" class="brand-logo">Hello! <%=@user.first_name%></a>
            <ul id="nav-mobile" class="right hide-on-med-and-down">
              <li><a href="sass.html">Sass</a></li>
              <li><a href="badges.html">Components</a></li>
@@ -40,42 +37,9 @@
      <div class="col s3">
        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
      </div>
-     <a href="/organization">
-       <div class="col s9">
-         <div class="col s12 m8 offset-m2 l6 offset-l3">
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="/assets/csulb.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                  CSULB
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-       </div>
-     </a>
-     <div class="col s9">
-       <div class="col s12 m8 offset-m2 l6 offset-l3">
-          <div class="card-panel grey lighten-5 z-depth-1">
-            <div class="row valign-wrapper">
-              <div class="col s2">
-                <img src="/assets/csun.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
-              <div class="col s10">
-                <span class="black-text">
-                  CSUN
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% @org.each do |o| %>
-        <a href="/organizations/<%=o.id%>">
+      <%  @org.each do |o| %>
+
+        <a id="orgs" href="/organizations/<%=o.id%>">
           <div class="col s9">
             <div class="col s12 m8 offset-m2 l6 offset-l3">
                <div class="card-panel grey lighten-5 z-depth-1">
