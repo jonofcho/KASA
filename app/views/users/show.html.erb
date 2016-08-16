@@ -97,15 +97,10 @@
         </div>
        </a>
    <%end%>
-   <% if current_user.id == 1%>
-     <form class="" action="/organizations" method="post">
-       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-       <input type="hidden" name="organization[user_id]" value="<%=@user.id%>">
-       <input type="text" name="organization[name]" value="">
-       <input type="text" name="organization[school_origin]" value="">
-       <input type="submit" name="name" value="Go">
-     </form>
-    <%end%>
+   <%=link_to('Create Organization', new_organization_path)%>
+
+
+
     </div>
   </body>
 </html>

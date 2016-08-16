@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="/organizations/<%=@org.id%>/edit" method="patch">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="id" value="<%=@org.id%>">
+        <label>Description:</label>
+        <input type="text" name="organization[description]" value="">
+        <label>School Admin:</label>
+        <input type="text" name="organization[school_admin]" value="">
+        <input type="file" name="organization[avatar]" value="">
+        <input type="file" name="organization[avatar2]" value="">
+        <input type="submit" name="name" value="go">
+      </form>
+    </div>
+  </body>
+</html>

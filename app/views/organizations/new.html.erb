@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <%= form_for @organization, url: organizations_path, html: { multipart: true } do |form| %>
+
+        <div class="field">
+          <%= form.label :name %>:
+          <%= form.text_field :name %><br />
+        </div>
+        <div class="field">
+          <%= form.label :school_origin%>
+          <%= form.text_field :school_origin%>
+        </div>
+        <div class="field">
+          <%= form.label :description%>
+          <%= form.text_field :description%>
+        </div>
+        <%= form.file_field :avatar2 %>
+        <%= form.file_field :avatar %>
+        <%= form.submit "Go"%>
+      <% end %>
+
+    </div>
+  </body>
+</html>

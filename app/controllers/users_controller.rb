@@ -12,9 +12,11 @@ class UsersController < ApplicationController
       @feature = User.find_by_id(z)
       @chongdaepost = Post.where(category: 1)
       @kasapost = Post.where(category: 2)
+
     end
 
     def profile
 
     end
+
 end

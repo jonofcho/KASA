@@ -20,6 +20,13 @@
                   </form>
                 </div>
                 <%end%>
+                <div class="edit">
+                  <form class="btn waves-effect waves-light" action="/organizations/update" method="post">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <input type="hidden" name="id" value="<%=@org.id%>">
+                    <input type="submit" name="" value="Edit">
+                  </form>
+                </div>
         <div class="parallax"><img src="/assets/csulbkasa.jpg" style="width:100%"; "height:500px"></div>
       </div>
       <div class="col hide-on-small-only m3 l2" id="scrollspy">
