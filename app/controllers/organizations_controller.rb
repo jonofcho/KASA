@@ -25,7 +25,7 @@ class OrganizationsController < ApplicationController
 
   def edit
     @org = Organization.find(params[:id])
-    x = Organization.update(@org.id, description: params[:description], school_admin: params[:school_admin], avatar: params[:avatar], avatar2: params[:avatar2])
+    x = Organization.update(@org.id, description: params[:description], school_admin: params[:school_admin], avatar: params[:avatar], avatar2: params[:avatar2], avatar3: params[:avatar3])
     x.save
     redirect_to @org
   end
@@ -36,7 +36,7 @@ class OrganizationsController < ApplicationController
 
   private
   def org_params
-    params.require(:organization).permit(:user_id, :name, :description, :school_admin, :school_origin, :avatar, :avatar2)
+    params.require(:organization).permit(:user_id, :name, :description, :school_admin, :school_origin, :avatar, :avatar2, :avatar3)
   end
 
 
