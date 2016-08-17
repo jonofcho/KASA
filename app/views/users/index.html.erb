@@ -71,7 +71,7 @@
           <h4><%=@kasa.name%>:</h4>
           <%@kasapost.each do|p|%>
           <p>
-            <%=p.text%>
+            <%=p.user.first_name%> <%=p.user.last_name%>:<%=p.text%>
           </p>
           <%end%>
         </div>

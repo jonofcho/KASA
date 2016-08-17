@@ -7,9 +7,8 @@ class UsersController < ApplicationController
       z = rand(y..x.count)
       @feature = User.find_by_id(z)
       @chongdaepost = Post.where(category: 1)
-      @kasapost = Post.where(category: 2)
       @kasa = Organization.find_by_id(@user.org_id)
-
+      @kasapost = Post.where(category: 2)
     end
 
     def show

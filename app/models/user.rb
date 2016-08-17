@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   belongs_to :organization
-  
+
+  validates :post, presence: true
   has_many :posts, dependent: :destroy
 end
