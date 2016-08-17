@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post.user_id = params[:user_id]
     @post.category = params[:group1]
     @post.save
-    redirect_to current_user
+    redirect_to users_path
   end
 
   def update
