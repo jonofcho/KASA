@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
     def index
-
-    end
-
-    def show
       @user = current_user
       @org = Organization.all
       x = User.all
@@ -13,6 +9,10 @@ class UsersController < ApplicationController
       @chongdaepost = Post.where(category: 1)
       @kasapost = Post.where(category: 2)
 
+    end
+
+    def show
+      @member = User.find_by_id(params[:id])
     end
 
     def profile

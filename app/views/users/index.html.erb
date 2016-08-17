@@ -6,24 +6,101 @@
   </head>
   <body>
     <div class="container">
-      <%= link_to('Sign In', new_user_session_path) %>
-      <div class="parallax-container">
-        <div class="parallax"><img src="/assets/uno.jpg" style="width:880px"; "height:500px"></div>
-      </div>
-      <div class="section white">
-        <div class="row container">
-          <h2 class="header">Parallax</h2>
-          <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      <header>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <nav>
+         <div class="nav-wrapper">
+           <a href="#" class="brand-logo">Hello! <%=@user.first_name%></a>
+           <ul id="nav-mobile" class="right hide-on-med-and-down">
+             <li><a href="sass.html">Sass</a></li>
+             <li><a href="badges.html">Components</a></li>
+             <li><a href="collapsible.html">JavaScript</a></li>
+             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+           </ul>
+         </div>
+       </nav>
+     </header>
+     <ul id="slide-out" class="side-nav">
+         <li><div class="userView">
+           <img class="background" src="/assets/dog1.jpg">
+           <a href="/profile"><img class="circle" src="<%= @user.avatar %>"></a>
+           <a href="#!name"><span class="white-text name"><%=@user.first_name%></span></a>
+           <a href="#!email"><span class="white-text email"><%=@user.email%></span></a>
+         </div></li>
+         <li><a href="/users/edit">Edit Profile</a></li>
+         <li><a href="#!">Second Link</a></li>
+         <li><div class="divider"></div></li>
+         <li><a class="subheader">Subheader</a></li>
+         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+       </ul>
+    <div class="row">
+     <div class="col s6">
+       <h4>Random Member!</h3>
+        <p><%=image_tag @user.avatar.url(:thumb) %></p>
+        <h5><%=@feature.first_name%> <%= @feature.last_name%></h4>
+        <p><strong>PlaceHolder Description:</strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum </p>
+     </div>
+     <div class="col s6">
+       <form class="" action="/posts" method="post">
+         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+         <input type="hidden" name="user_id" value="<%=@user.id%>">
+         <p>
+           <input name="group1" type="radio" id="test1" value="1"/>
+           <label for="test1">To Chongdae</label>
+         </p>
+         <p>
+           <input name="group1" type="radio" id="test2" value="2"/>
+           <label for="test2">To your Kasa</label>
+         </p>
+         <input type="text" name="post[text]" placeholder="Write your message...">
+         <input type="submit" name="name" value="Post">
+       </form>
+     </div>
+   </div>
+   <div class="notices">
+     <div class="row">
+        <div class="col s6">
+          <h4>Chongdae:</h4>
+          <%@chongdaepost.each do |x|%>
+          <p>
+            <%=x.text%>
+          </p>
+          <%end%>
         </div>
-      </div>
-      <div class="parallax-container">
-        <div class="parallax"><img src="/assets/dos.jpg" style="width:880px"; "height:500px"></div>
-      </div>
-    <div class="section white">
-      <div class="row container">
-        <h2 class="header">Parallax</h2>
-        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
+        <div class="col s6">
+          <h4>KASA:</h4>
+          <%@kasapost.each do|p|%>
+          <p>
+            <%=p.text%>
+          </p>
+          <%end%>
+        </div>
+     </div>
+   </div>
+   <%  @org.each do |o| %>
+     <a id="orgs" href="/organizations/<%=o.id%>">
+       <div class="col s9">
+         <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card-panel grey lighten-5 z-depth-1">
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img src="<%= o.avatar3 %>" alt="" class="circle responsive-img" height="" width="50%"> <!-- notice the "circle" class -->
+                </div>
+                <div class="col s10">
+                  <span class="black-text">
+                    <%= o.name %>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </a>
+   <%end%>
+   <%=link_to('Create Organization', new_organization_path)%>
+
+
+
     </div>
   </body>
 </html>
