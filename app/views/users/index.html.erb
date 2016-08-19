@@ -68,11 +68,13 @@
           <%end%>
         </div>
         <div class="col s6">
+          <%if @kasa%>
           <h4><%=@kasa.name%>:</h4>
           <%@kasapost.each do|p|%>
           <p>
             <%=p.user.first_name%> <%=p.user.last_name%>:<%=p.text%>
           </p>
+          <%end%>
           <%end%>
         </div>
      </div>

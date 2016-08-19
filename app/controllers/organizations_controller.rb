@@ -14,7 +14,7 @@ class OrganizationsController < ApplicationController
     @user = current_user
     @organization = Organization.new(org_params)
     @organization.save
-    redirect_to current_user
+    redirect_to users_path
   end
 
   def join

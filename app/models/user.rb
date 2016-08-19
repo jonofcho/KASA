@@ -17,6 +17,5 @@ class User < ActiveRecord::Base
 
   belongs_to :organization
 
-  validates :post, presence: true
   has_many :posts, dependent: :destroy
 end
