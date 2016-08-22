@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     end
 
     def show
+      @user = current_user
       @member = User.find_by_id(params[:id])
     end
 

@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources:organizations
   resources:posts
 
-  get '/profile' => 'users#profile'
   post '/organizations/update' => 'organizations#update'
   post '/join' => 'organizations#join'
 
