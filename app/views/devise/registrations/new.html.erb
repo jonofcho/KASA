@@ -40,6 +40,31 @@
             </div>
 
             <div class="field">
+              <%= f.label :description %> <br />
+              <%= f.text_field :description %>
+            </div>
+
+            <div class="field">
+              <%= f.label :grad_year %> <br />
+              <%= f.text_field :grad_year %> 
+            </div>
+
+            <div class="field">
+              <%= f.label :major %> <br />
+              <%= f.text_field :major %>
+            </div>
+
+            <div class="field">
+              <%= f.label :current_employer %> <br />
+              <%= f.text_field :current_employer %>
+            </div>
+
+            <div class="field">
+              <%= f.label :current_position %> <br />
+              <%= f.text_field :current_position %>
+            </div>
+
+            <div class="field">
               <%= f.label :password %>
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
