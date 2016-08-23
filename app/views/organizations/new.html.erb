@@ -6,6 +6,26 @@
   </head>
   <body>
     <div class="container">
+      <header>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <nav>
+         <div class="nav-wrapper">
+           <a href="#" class="brand-logo">Hello! <%=@user.first_name%></a>
+           <ul id="nav-mobile" class="right hide-on-med-and-down">
+             <li>
+               <%= form_tag(search_path, :method => "get", id: "search-form") do %>
+                 <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+                 <%= submit_tag "Search" %>
+                 <% end %>
+             </li>
+             <li><%= link_to('Home', users_path )%></li>
+             <li><a href="badges.html">Components</a></li>
+             <li><a href="collapsible.html">JavaScript</a></li>
+             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+           </ul>
+         </div>
+       </nav>
+     </header>
       <%= form_for @organization, url: organizations_path, html: { multipart: true } do |form| %>
 
         <div class="field">

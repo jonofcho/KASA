@@ -6,9 +6,8 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <%= link_to("Back", users_path)%>
-      </header>
+    <%=render '/partials/header'%>
+     </header>
       <div class="parallax-container">
             <h1><%=@org.name%></h1>
               <% if !current_user.org_id %>

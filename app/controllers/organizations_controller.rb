@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
   def show
     @org = Organization.find_by_id(params[:id])
-    @user = User.all
+    @user = current_user
     @member = User.where(org_id: @org.id)
   end
 
