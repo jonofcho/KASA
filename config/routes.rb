@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "sessions#index"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   resources:organizations
   resources:posts
 
+  get '/search' => 'users#search'
   post '/organizations/update' => 'organizations#update'
   post '/join' => 'organizations#join'
 

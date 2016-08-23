@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   belongs_to :organization
 
   has_many :posts, dependent: :destroy
+
+  def self.search(search)
+    where("first_name || ' ' || last_name like :s", :s => "%#{search}")
+  end
 end
