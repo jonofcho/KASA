@@ -16,9 +16,12 @@
 @import "materialize";
 
 .nav-wrapper{
-  background-color: #311e3e;
+  background-color: #1e2022;
   width: 100%;
   padding-left: 3%;
+}
+body{
+  background-color: #f0f5f9;
 }
 .container{
 
@@ -39,15 +42,12 @@ header{
 #introduction{
   margin-left: .9%;
   width: 100%;
-  background-color: #fafafa;
 }
 #logistics{
   width: 100%;
-  background-color: #fafafa;
 }
 #ourmembers{
   width: 100%;
-  background-color: #fafafa;
 }
 .join{
   margin-left: 10%;
