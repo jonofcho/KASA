@@ -8,6 +8,7 @@ class OrganizationsController < ApplicationController
   def index
   end
   def new
+    @user = current_user
     @organization = Organization.new
   end
   def create
