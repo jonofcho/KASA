@@ -9,6 +9,9 @@ class UsersController < ApplicationController
       @chongdaepost = Post.where(category: 1)
       @kasa = Organization.find_by_id(@user.org_id)
       @kasapost = Post.where(category: 2)
+      if Organization.where(name: "Chongdae")
+        @chongdae = Organization.where(name: "Chongdae")
+      end
     end
 
     def show

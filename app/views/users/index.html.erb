@@ -33,9 +33,9 @@
            <a href="#!email"><span class="white-text email"><%=@user.email%></span></a>
          </div></li>
          <li><a href="/users/edit">Edit Profile</a></li>
-         <li><a href="#!">Second Link</a></li>
+         <li><a href="#!"><%if @kasa%><%= @kasa.name%><%end%></a></li>
          <li><div class="divider"></div></li>
-         <li><a class="subheader">Subheader</a></li>
+         <li><a href="">Chongdae</a></li>
          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
        </ul>
        <div class="main">
