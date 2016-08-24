@@ -3,6 +3,10 @@ class OrganizationsController < ApplicationController
     @org = Organization.find_by_id(params[:id])
     @user = current_user
     @member = User.where(org_id: @org.id)
+    if Organization.find_by_name("Chongdae")
+      @chongdae = Organization.find_by_name("Chongdae")
+    end
+    @kasa = Organization.find_by_id(@user.org_id)
   end
 
   def index

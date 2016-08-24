@@ -9,16 +9,20 @@ class UsersController < ApplicationController
       @chongdaepost = Post.where(category: 1)
       @kasa = Organization.find_by_id(@user.org_id)
       @kasapost = Post.where(category: 2)
-      if Organization.where(name: "Chongdae")
-        @chongdae = Organization.where(name: "Chongdae")
+      if Organization.find_by_name("Chongdae")
+        @chongdae = Organization.find_by_name("Chongdae")
       end
     end
 
     def show
       @user = current_user
       @member = User.find_by_id(params[:id])
+      if Organization.find_by_name("Chongdae")
+        @chongdae = Organization.find_by_name("Chongdae")
+      end
+      @kasa = Organization.find_by_id(@user.org_id)
     end
-
+    
     def search
       @users = User.all
       if params[:search]
