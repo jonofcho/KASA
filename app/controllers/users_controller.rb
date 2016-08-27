@@ -22,8 +22,9 @@ class UsersController < ApplicationController
       end
       @kasa = Organization.find_by_id(@user.org_id)
     end
-    
+
     def search
+      @user = current_user
       @users = User.all
       if params[:search]
         @users = User.search(params[:search]).order("created_at DESC")

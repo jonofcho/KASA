@@ -6,38 +6,7 @@
   </head>
   <body>
     <div class="container">
-      <header>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-      <nav>
-         <div class="nav-wrapper">
-           <a href="#" class="brand-logo" >Hello! <%=@user.first_name%></a>
-           <ul id="nav-mobile" class="right hide-on-med-and-down">
-             <li>
-               <%= form_tag(search_path, :method => "get", id: "search-form") do %>
-                 <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
-                 <% end %>
-             </li>
-             <li><%= link_to('Home', users_path )%></li>
-             <%if @kasa%><li><a href="/organizations/<%= @kasa.id%>"><%if @kasa%><%= @kasa.name%><%end%></a></li><%end%>
-             <%if @chongdae%><li><a id="orgs" href="/organizations/<%=@chongdae.id%>">Chongdae</a></li><%end%>
-             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-           </ul>
-         </div>
-       </nav>
-     </header>
-     <ul id="slide-out" class="side-nav">
-         <li><div class="userView">
-           <img class="background" src="/assets/dog1.jpg">
-           <a href="/users/<%=@user.id%>"><img class="circle" src="<%= @user.avatar %>"></a>
-           <a href="#!name"><span class="white-text name"><%=@user.first_name%></span></a>
-           <a href="#!email"><span class="white-text email"><%=@user.email%></span></a>
-         </div></li>
-         <li><a href="/users/edit">Edit Profile</a></li>
-         <%if @kasa%><<li><a href="/organizations/<%= @kasa.id%>"><%if @kasa%><%= @kasa.name%><%end%></a></li><%end%>
-         <li><div class="divider"></div></li>
-      <%if @chongdae%><li><a id="orgs" href="/organizations/<%=@chongdae.id%>">Chongdae</a></li><%end%>
-         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-       </ul>
+      <%= render "partials/header"%>
   <div class="main">
     <div class="row">
       <% if @users %>

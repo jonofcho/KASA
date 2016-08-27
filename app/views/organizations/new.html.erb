@@ -6,27 +6,7 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-      <nav>
-         <div class="nav-wrapper">
-           <a href="#" class="brand-logo">Hello! <%=@user.first_name%></a>
-           <ul id="slide-out" class="side-nav">
-               <li><div class="userView">
-                 <img class="background" src="/assets/dog1.jpg">
-                 <a href="/users/<%=@user.id%>"><img class="circle" src="<%= @user.avatar %>"></a>
-                 <a href="#!name"><span class="white-text name"><%=@user.first_name%></span></a>
-                 <a href="#!email"><span class="white-text email"><%=@user.email%></span></a>
-               </div></li>
-               <li><a href="/users/edit">Edit Profile</a></li>
-               <%if @kasa%><<li><a href="/organizations/<%= @kasa.id%>"><%if @kasa%><%= @kasa.name%><%end%></a></li><%end%>
-               <li><div class="divider"></div></li>
-            <%if @chongdae%><li><a id="orgs" href="/organizations/<%=@chongdae.id%>">Chongdae</a></li><%end%>
-               <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-             </ul>
-         </div>
-       </nav>
-     </header>
+      <%= render "/partials/header"%>
       <%= form_for @organization, url: organizations_path, html: { multipart: true } do |form| %>
 
         <div class="field">
