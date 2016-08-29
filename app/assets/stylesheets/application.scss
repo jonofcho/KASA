@@ -15,11 +15,36 @@
  */
 @import "materialize";
 
-.nav-wrapper{
-  background-color: #1e2022;
-  width: 100%;
-  padding-left: 3%;
+#content{
+  padding: 3%;
+  padding-left: 300px;
 }
+.row .col{
+  padding: 0;
+}
+#sidenav{
+  background-color: #1e2022;
+  position: fixed;
+  #sidelinks{
+    height: 1000px;
+    opacity: 0.98;
+  }
+}
+.btn:not(.links){
+  width: 100%;
+  background-color: #1e2022;
+  
+
+}
+nav .nav-wrapper{
+  height: 80px;
+  z-index: 2;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #1e2022;
+}
+
 body{
   background-color: #f0f5f9;
 }
@@ -30,9 +55,7 @@ body{
 .container{
   width: 100%;
 }
-header{
-  margin-bottom: .7%
-}
+
 #scrollspy{
   display: inline-block;
 }

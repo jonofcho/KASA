@@ -5,8 +5,7 @@
     <title></title>
   </head>
   <body>
-        <%=render "/partials/header"%>
-    <div class="container">    
+    <div class="container">
       <% @users.each do |x|%>
       <a href="/users/<%=x.id%>">
       <div class="card blue-grey darken-1">
