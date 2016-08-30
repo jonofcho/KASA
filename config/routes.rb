@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources:posts
 
   get '/search' => 'users#search'
+  get '/chongdae' => 'organizations#chongdae'
   post '/organizations/update' => 'organizations#update'
   post '/join' => 'organizations#join'
 

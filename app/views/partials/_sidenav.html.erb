@@ -1,11 +1,14 @@
 
     <ul id="sidelinks">
+      <li><a href="/users/<%=@user.id%>" class="waves-effect waves-light btn">Profile</a></li>
+      <li><div class="divider"></div></li>
       <li><a href="#!" class="waves-effect waves-light btn">Upcoming Events</a></li>
       <li><div class="divider"></div></li>
-      <%if @kasa%><li><a href="/organizations/<%= @kasa.id%>" class="waves-effect waves-light btn"><%if @kasa%><%= @kasa.name%><%end%></a></li><%end%>
-      <li><div class="divider"></div></li>
-      <%if @chongdae%><li><a id="orgs" href="/organizations/<%=@chongdae.id%>" class="waves-effect waves-light btn">Chongdae</a></li><%end%>
+      <%if @kasa%><li><a href="/organizations/<%= @kasa.id%>" class="waves-effect waves-light btn"><%= @kasa.name%></a></li>
+      <li><div class="divider"></div></li><%end%>
       <li><a href="/users/edit" class="waves-effect waves-light btn">Edit Profile</a></li>
       <li><div class="divider"></div></li>
-      <li><a href="#!" class="waves-effect waves-light btn">Third Link With Waves</a></li>
+      <li><a href="#!" class="waves-effect waves-light btn">Jobs</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="/chongdae" class="waves-effect waves-light btn">Chongdae</a></li>
     </ul>

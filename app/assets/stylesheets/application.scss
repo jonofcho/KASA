@@ -26,6 +26,9 @@
   background-color: #1e2022;
   position: fixed;
   #sidelinks{
+    a {
+      text-align: left;
+    }
     height: 1000px;
     opacity: 0.98;
   }
@@ -33,7 +36,7 @@
 .btn:not(.links){
   width: 100%;
   background-color: #1e2022;
-  
+
 
 }
 nav .nav-wrapper{

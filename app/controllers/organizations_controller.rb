@@ -41,6 +41,13 @@ class OrganizationsController < ApplicationController
     @org = Organization.find(params[:id])
   end
 
+  def chongdae
+    @chongdae = Organization.find_by_name("Chongdae")
+    @user = current_user
+    @users = User.all.where("id != ?", current_user.id)
+    @org = Organization.all.where("name != ?", "Chongdae")
+  end
+
   private
   def org_params
     params.require(:organization).permit(:user_id, :name, :description, :school_admin, :school_origin, :avatar, :avatar2, :avatar3)
