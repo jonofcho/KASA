@@ -11,16 +11,8 @@
       <% if @users %>
         <%= render search_path %>
       <% end %>
-         <div class="col s6">
-           <h4>Random Member!</h4>
-             <%if @feature%>
-            <p><%=image_tag @feature.avatar.url(:thumb) %></p>
-            <h5><%=@feature.first_name%> <%= @feature.last_name%></h5>
-            <p><strong>PlaceHolder Description:</strong><%=@feature.description%></p>
-            <%end%>
-         </div>
-         <div class="col s6">
-           <form class="" action="/posts" method="post">
+         <div class="col s12">
+           <form class="post-field" action="/posts" method="post">
              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
              <input type="hidden" name="user_id" value="<%=@user.id%>">
              <p>
