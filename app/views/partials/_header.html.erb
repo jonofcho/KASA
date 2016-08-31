@@ -1,7 +1,7 @@
 <header>
   <nav>
    <div class="nav-wrapper">
-     <a href="#" class="brand-logo">Hello! <%=@user.first_name%></a>
+     <a href="#" class="brand-logo">Hello <%=@user.first_name%>!</a>
      <ul id="nav-mobile" class="right hide-on-med-and-down">
        <li>
          <%= form_tag(search_path, :method => "get", id: "search-form") do %>
