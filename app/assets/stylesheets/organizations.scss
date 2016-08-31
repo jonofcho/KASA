@@ -9,3 +9,15 @@
   display: inline-block;
   vertical-align: top;
 }
+.org-cards{
+  margin-left: 5%;
+}
+.card{
+  display:inline-block;
+  vertical-align: top;
+  width: 250px;
+  height: 300px;
+  strong{
+    text-align: center;
+  }
+}
