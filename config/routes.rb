@@ -9,8 +9,12 @@ Rails.application.routes.draw do
 
   get '/search' => 'users#search'
   get '/chongdae' => 'organizations#chongdae'
+  get '/new_member' => 'organizations#new_member'
+
+  post'/new_member' => 'organizations#new_member'
   post '/organizations/update' => 'organizations#update'
   post '/join' => 'organizations#join'
+  post '/create_new_member' => 'users#create_new_member'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

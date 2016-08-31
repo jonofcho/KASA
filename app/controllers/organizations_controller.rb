@@ -18,6 +18,7 @@ class OrganizationsController < ApplicationController
   def create
     @user = current_user
     @organization = Organization.new(org_params)
+    @organization.user_id = current_user.id
     @organization.save
     redirect_to users_path
   end
@@ -47,6 +48,11 @@ class OrganizationsController < ApplicationController
     @users = User.all.where("id != ?", current_user.id)
     @org = Organization.all.where("name != ?", "Chongdae")
   end
+
+  def new_member
+    @user = current_user
+  end
+
 
   private
   def org_params
