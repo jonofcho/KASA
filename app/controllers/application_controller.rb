@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_cache_buster
   protect_from_forgery
   def after_sign_in_path_for(resource)
-    users_path
+    current_user
   end
 
 
