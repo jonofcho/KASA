@@ -50,26 +50,6 @@
               </div>
            </div>
          </div>
-         <%  @org.each do |o| %>
-         <div class="organization-cards">
-           <a id="orgs" href="/organizations/<%=o.id%>">
-               <div class="col s12 m8 offset-m2 l6 offset-l3">
-                  <div class="card-panel grey lighten-5 z-depth-1">
-                    <div class="row valign-wrapper">
-                      <div class="col s6">
-                        <img src="<%= o.avatar3 %>" alt="" class="circle responsive-img" height="" width="50%"> <!-- notice the "circle" class -->
-                      </div>
-                      <div class="col s6">
-                        <span class="black-text">
-                          <%= o.name %>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-             </a>
-            </div>
-         <%end%>
        </div>
        <%=link_to('Create Organization', new_organization_path)%>
     </div>
