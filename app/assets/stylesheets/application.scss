@@ -14,7 +14,9 @@
  *= require_self
  */
 @import "materialize";
-
+nav{
+  background-color: #1e2022;
+}
 .nav-wrapper a{
   margin-left: 2%;
 }

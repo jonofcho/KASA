@@ -12,7 +12,13 @@
       </header>
       <div class="links">
         <ul>
-          <li><a class="waves-effect waves-light btn" href="/users/sign_in">Sign In</a></li>
+          <div class="login">
+            <form class="" action="/users/sign_in" method="post">
+              <input type="text" name="user[email]" placeholder="Email">
+              <input type="password" name="user[password]" placeholder="Password">
+              <input type="submit" name="name" value="Log In" class="waves-effect waves-light btn">
+            </form>
+          </div>
           <li><a class="waves-effect waves-light btn" href="/users/sign_up">Sign Up</a></li>
         </ul>
       </div>
