@@ -32,11 +32,12 @@ nav{
   top: 3;
   background-color: #1e2022;
   position: fixed;
+  height: 100%;
   #sidelinks{
     a {
       text-align: left;
     }
-    height: 1000px;
+    height: 100%;
     opacity: 0.98;
   }
 }

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources:organizations
   resources:posts
   resources:staffs
+  resources:events
 
   get '/search' => 'users#search'
   get '/chongdae' => 'organizations#chongdae'
