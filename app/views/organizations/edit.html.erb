@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="register">
+        <form class="" action="/organizations/<%=@org.id%>" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input name="_method" type="hidden" value="patch" />
+          <input type="hidden" name="id" value="<%=@org.id%>">
+          <label>Description:</label>
+          <input type="text" name="organization[description]" value="">
+          <label>School Admin:</label>
+          <input type="text" name="organization[school_admin]" value="">
+          <input type="file" name="organization[avatar]" value="">
+          <input type="file" name="organization[avatar2]" value="">
+          <input type="submit" name="name" value="go">
+        </form>
+      </div>
+      <br>
+      <br>
+      <!-- <div class="register">
+        <label>Add your Staff:</label>
+        <form class="" action="/staffs" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="id" value="<%=@org.id%>">
+
+        </form>
+      </div> -->
+    </div>
+  </body>
+</html>

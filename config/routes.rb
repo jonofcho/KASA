@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources:users
   resources:organizations
   resources:posts
+  resources:staffs
 
   get '/search' => 'users#search'
   get '/chongdae' => 'organizations#chongdae'
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
   post '/sign_in' => 'devise/sessions#create'
   post'/new_member' => 'organizations#new_member'
-  post '/organizations/update' => 'organizations#update'
+  post '/organizations/edit' => 'organizations#edit'
   post '/join' => 'organizations#join'
   post '/create_new_member' => 'users#create_new_member'
 

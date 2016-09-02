@@ -33,13 +33,13 @@ class OrganizationsController < ApplicationController
 
   def edit
     @org = Organization.find(params[:id])
-    x = Organization.update(@org.id, description: params[:description], school_admin: params[:school_admin], avatar: params[:avatar], avatar2: params[:avatar2], avatar3: params[:avatar3])
-    x.save
-    redirect_to @org
+    @user = current_user
   end
 
   def update
     @org = Organization.find(params[:id])
+    @org.update_attributes(org_params)
+    redirect_to @org
   end
 
   def chongdae

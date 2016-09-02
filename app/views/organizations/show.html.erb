@@ -23,7 +23,7 @@
                 </div>
                 <%end%>
                 <div class="edit">
-                  <form class="btn waves-effect waves-light" action="/organizations/update" method="post">
+                  <form class="btn waves-effect waves-light" action="/organizations/edit" method="post">
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <input type="hidden" name="id" value="<%=@org.id%>">
                     <input type="submit" name="" value="Edit">
