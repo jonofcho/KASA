@@ -1,73 +1,42 @@
   <!DOCTYPE html>
   <html>
-    <head>
-      <meta charset="utf-8">
-      <title></title>
-    </head>
-    <%@sessions_index = true%>
-    <body>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <%@sessions_index = true%>
+  <body>
+    <header>
       <div class="container">
-        <header>
-          <strong><h2>Korean American Student Association</h2></strong>
-          <h5>:The Professional Side of KASA</h5>
-        </header>
-        <div class="links">
-          <ul>
-            <div class="login">
-                <h2>Log in</h2>
-                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="field">
-                      <%= f.label :email %><br />
-                      <%= f.email_field :email, autofocus: true %>
-                    </div>
-
-                    <div class="field">
-                      <%= f.label :password %><br />
-                      <%= f.password_field :password, autocomplete: "off" %>
-                    </div>
-
-                    <% if devise_mapping.rememberable? -%>
-                      <div class="field">
-                        <%= f.check_box :remember_me %>
-                        <%= f.label :remember_me %>
-                      </div>
-                    <% end -%>
-
-                    <div class="actions">
-                      <%= f.submit "Log in" %>
-                    </div>
-                  <% end %>
-                <%= render "devise/shared/links" %>
-            </div>
-            <li><a class="waves-effect waves-light btn" href="/users/sign_up">Sign Up</a></li>
-          </ul>
-        </div>
-        <div class="images" height="30">
-          <div class="carousel carousel-slider">
-             <a class="carousel-item" href="#one!"><img src="http://trunkweed.com/uploads/posts/images/816100-artsy-wallpaper-tumblr-hd.jpg"></a>
-             <a class="carousel-item" href="#two!"><img src="https://s-media-cache-ak0.pinimg.com/736x/b5/d9/32/b5d932109d42b4f59347324ab597c178.jpg"></a>
-             <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
-             <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
-           </div>
-         </div>
-        <div class="text">
-          <div class="section white">
-            <div class="row container">
-              <h2 class="header">Parallax</h2>
-              <p class="grey-text text-darken-3 lighten-3"></p>
-            </div>
+        <div class="title">Korean American Student Association</div>
+        <div class="login">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true %>
           </div>
-        </div>
-        <div class="parallax-container">
-          <div class="parallax"><img src="" style="width:100px"; "height:500px"></div>
-        </div>
-        <div class="text">
-          <div class="section white">
-            <div class="row container">
-              <h2 class="header">Parallax</h2>
-              <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            </div>
+          <div class="field">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "off" %>
           </div>
+          <div class="action">
+            <%= f.submit "Log in" %>
+            <%= render "devise/shared/links" %>
+          </div>
+          <% end %>
         </div>
-    </body>
+      </div>
+    </header>
+    <div class="images">
+      <div class="carousel carousel-slider" >
+        <a class="carousel-item" href="#one!"><img src="http://trunkweed.com/uploads/posts/images/816100-artsy-wallpaper-tumblr-hd.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="https://s-media-cache-ak0.pinimg.com/736x/b5/d9/32/b5d932109d42b4f59347324ab597c178.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
+        <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
+      </div>
+    </div>
+    <footer>
+      <p>Developed by Jonathan Cho and Joey Lee</p>
+    </footer>
+  </body>
   </html>
