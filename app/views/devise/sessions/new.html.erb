@@ -7,7 +7,6 @@
   <%@sessions_index = true%>
   <body>
     <header>
-      <div class="container">
         <div class="title">Korean American Student Association</div>
         <div class="login">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -25,8 +24,8 @@
           </div>
           <% end %>
         </div>
-      </div>
     </header>
+  <div class="container">
     <div class="images">
       <div class="carousel carousel-slider" >
         <a class="carousel-item" href="#one!"><img src="http://trunkweed.com/uploads/posts/images/816100-artsy-wallpaper-tumblr-hd.jpg"></a>
@@ -35,6 +34,7 @@
         <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
       </div>
     </div>
+  </div>
     <footer>
       <p>Developed by Jonathan Cho and Joey Lee</p>
     </footer>
