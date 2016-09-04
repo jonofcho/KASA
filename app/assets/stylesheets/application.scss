@@ -118,11 +118,13 @@ body{
   padding-bottom:10px;
   height:40px;
   .field{
+    vertical-align: top;
     display:inline-block;
     background-color: #fafafa;
     height: 100%;
     input{
       height: 100%;
+      margin-bottom: 0px;
     }
   }
 }
@@ -130,7 +132,7 @@ body{
   display:inline-block;
 }
 .images{
-  display:block;
+
 }
 footer{
   text-align:center;

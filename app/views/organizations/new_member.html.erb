@@ -9,29 +9,31 @@
       <%if flash[:message]%>
       <%=flash[:message]%>
       <%end%>
-      <div class="new_member_form">
-        <form class="" action="/create_new_member" method="post">
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <input type="hidden" name="user[org_id]" value="<%=params[:id]%>">
-          <div class="field">
-            <input type="text" name="user[email]" placeholder="Email">
-          </div>
-          <div class="field">
-            <input type="text" name="user[first_name]" placeholder="First Name">
-          </div>
-          <div class="field">
-            <input type="text" name="user[last_name]" placeholder="Last Name">
-          </div>
-          <div class="field">
-            <input type="password" name="user[password]" placeholder="Password">
-          </div>
-          <div class="field">
-            <input type="password" name="user[password_confirmation]" placeholder="Password Confirmation">
-          </div>
-          <div class="field">
-            <input type="submit" name="name" value="Register New Member" class="btn waves-effect waves-light">
-          </div>
-        </form>
+      <div class="register">
+        <div class="new_member_form">
+          <form class="" action="/create_new_member" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="user[org_id]" value="<%=params[:id]%>">
+            <div class="field">
+              <input type="text" name="user[email]" placeholder="Email">
+            </div>
+            <div class="field">
+              <input type="text" name="user[first_name]" placeholder="First Name">
+            </div>
+            <div class="field">
+              <input type="text" name="user[last_name]" placeholder="Last Name">
+            </div>
+            <div class="field">
+              <input type="password" name="user[password]" placeholder="Password">
+            </div>
+            <div class="field">
+              <input type="password" name="user[password_confirmation]" placeholder="Password Confirmation">
+            </div>
+            <div class="field">
+              <input type="submit" name="name" value="Register New Member" class="btn waves-effect waves-light">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </body>
