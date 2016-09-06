@@ -51,7 +51,9 @@
            </div>
          </div>
        </div>
-       <%=link_to('Create Organization', new_organization_path)%>
+       <%if current_user.id = 1%>
+        <%=link_to('Create Organization', new_organization_path)%>
+        <%end%>
     </div>
   </body>
 </html>
