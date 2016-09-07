@@ -56,8 +56,8 @@ nav .nav-wrapper{
   width: 100%;
   background-color: #1e2022;
 }
-header{
-  display:block;
+.title{
+  color: white;
 }
 body{
   background-color: #f0f5f9;
@@ -128,6 +128,7 @@ body{
     input{
       height: 100%;
       margin-bottom: 0px;
+      border-radius: 10%;
     }
   }
 }
@@ -135,6 +136,7 @@ body{
   display:inline-block;
 }
 .images{
+  background-color: #333333;
 }
 footer{
   text-align:center;
