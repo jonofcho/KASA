@@ -3,11 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .join{
   display: inline-block;
-}
-
-.edit{
-  display: inline-block;
   vertical-align: top;
+}
+.buttons{
+  margin-left: 5%;
 }
 .org-cards{
   margin-left: 5%;
@@ -28,4 +27,8 @@ body{
   .header{
     margin-left: 4%;
   }
+}
+#org-title{
+  color: white;
+  opacity: 1;
 }

@@ -13,10 +13,9 @@
  *= require_tree .
  *= require_self
  */
- html{
-   font-family: Montserrat;
- }
+
 @import "materialize";
+
 nav{
   background-color: #1e2022;
 }
@@ -72,6 +71,7 @@ body{
 
 #scrollspy{
   display: inline-block;
+  margin-left: 4%;
 }
 #title{
   display: inline-block;
@@ -80,7 +80,8 @@ body{
 }
 
 #introduction{
-  margin-left: .9%;
+  padding-left: 5%;
+  padding-right: 5%;
   width: 100%;
 }
 #logistics{
@@ -89,9 +90,7 @@ body{
 #ourmembers{
   width: 100%;
 }
-.join{
-  margin-left: 10%;
-}
+
 #search-form{
   width: 500px;
   input{
