@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :projects, through: :project_users
   has_many :posts, dependent: :destroy
 
+  config = YAML::load_file('config/application.yml')
+  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" },
       :default_url => "/images/:style/missing.png",
       :url  => ":s3_domain_url",
