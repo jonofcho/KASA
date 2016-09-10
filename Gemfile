@@ -3,6 +3,7 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'materialize-sass'
 gem 'hirb'
 gem 'devise'
+gem 'aws-sdk', '~> 2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
