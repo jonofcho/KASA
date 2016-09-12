@@ -13,11 +13,30 @@
           <input type="hidden" name="id" value="<%=@org.id%>">
           <label>Description:</label>
           <input type="text" name="organization[description]" value="">
-          <label>School Admin:</label>
+          <!-- <label>School Admin:</label> -->
           <!-- <input type="text" name="organization[school_admin]" value=""> -->
-          <input type="file" name="organization[avatar]" value="">
-          <input type="file" name="organization[avatar2]" value="">
+          <div class="field">
+            <label>Hero Image #1:</label>
+            <input type="file" name="organization[avatar]">
+          </div>
+          <div class="field">
+            <label>Hero Image #2:</label>
+            <input type="file" name="organization[avatar2]" placeholder="Hero Image #2:">
+          </div>
           <input type="submit" name="name" value="go">
+        </form>
+      </div>
+      <br>
+      <br>
+      <div class="admin-edit">
+        <form class="" action="/logistics/<%=@org.id%>" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input name="_method" type="hidden" value="patch" />
+          <input type="hidden" name="id" value="<%=@org.id%>">
+          <input type="text" name="logistic[meeting_location]" placeholder="Meeting Location:">
+          <input type="text" name="logstic[next_meeting]" placeholder="Next Meeting Date: (Date) (Day of the Week)">
+          <input type="text" name="logistic[time]" placeholder="Time: i.e(5:30 P.M)">
+          <input type="submit" name="name" value="Update!">
         </form>
       </div>
       <br>

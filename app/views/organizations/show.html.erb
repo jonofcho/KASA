@@ -67,9 +67,11 @@
        </div>
        <div id="logistics" class="section scrollspy">
          <h4 class="right-align">Logistics:</h4>
-         <h6 class="right-align">Meeting Location:</h6>
-         <h6 class="right-align">Next Meeting Date:</h6>
-         <h6 class="right-align">Time:</h6>
+         <%if x = @org.logistic%>
+         <h6 class="right-align">Meeting Location: <%=x.meeting_location%></h6>
+         <h6 class="right-align">Next Meeting Date: <%=x.next_meeting.month%></h6>
+         <h6 class="right-align">Time: <%=x.time%></h6>
+         <%end%>
        </div>
        <div id="ourmembers" class="section scrollspy">
          <h4 class="center-align">Our Members:</h4>

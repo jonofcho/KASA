@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'logistics/edit'
+
+  get 'logistics/update'
+
   devise_scope :user do
     root to: "devise/sessions#new"
   end
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
   resources:posts
   resources:staffs
   resources:events
+  resources:logistics
 
   get '/search' => 'users#search'
   get '/chongdae' => 'organizations#chongdae'
