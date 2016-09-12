@@ -22,14 +22,25 @@
       </div>
       <br>
       <br>
-      <!-- <div class="register">
-        <label>Add your Staff:</label>
-        <form class="" action="/staffs" method="post">
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <input type="hidden" name="id" value="<%=@org.id%>">
+      <div class="admin-dashboard">
+        <div class="members-table">
+          <%if @members%>
+          <table class="striped">
+              <tr>
+                <th>Name:</th>
+                <th>Email:</th>
+                <th>Status:</th>
+              </tr>
+              <%@members.each do |x|%>
+              <td><%=x.first_name + " " x.last_name%></td>
+              <td><%=x.first_name%></td>
+              <td><%=x.first_name%></td>
 
-        </form>
-      </div> -->
+              <%end%>
+          </table>
+          <%end%>
+        </div>
+      </div>
     </div>
   </body>
 </html>

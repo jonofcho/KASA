@@ -34,6 +34,7 @@ class OrganizationsController < ApplicationController
   def edit
     @org = Organization.find(params[:id])
     @user = current_user
+    @members = User.where(org_id: @org.id)
   end
 
   def update
