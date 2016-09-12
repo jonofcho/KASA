@@ -32,10 +32,10 @@
                 <th>Status:</th>
               </tr>
               <%@members.each do |x|%>
-              <td><%=x.first_name + " " x.last_name%></td>
-              <td><%=x.first_name%></td>
-              <td><%=x.first_name%></td>
-
+              <td><%=x.first_name%> <%=x.last_name%></td>
+              <td><%=x.email%></td>
+              <td><%=x.status%></td>
+              <td><%= link_to('Remove User', remove_from_org , class: "waves-effect waves-light btn" )%></ld>
               <%end%>
           </table>
           <%end%>

@@ -35,6 +35,13 @@ class OrganizationsController < ApplicationController
     @org = Organization.find(params[:id])
     @user = current_user
     @members = User.where(org_id: @org.id)
+    if @members.status == 0
+      @status= "Active Member"
+    elsif @members.status == 1
+      @status = "Member"
+    else
+      @status = "Alumni"
+    end
   end
 
   def update
@@ -48,6 +55,9 @@ class OrganizationsController < ApplicationController
     @user = current_user
     @users = User.all.where("id != ?", current_user.id)
     @org = Organization.all.where("name != ?", "Chongdae")
+  end
+  def remove_from_org
+    
   end
 
   def new_member
