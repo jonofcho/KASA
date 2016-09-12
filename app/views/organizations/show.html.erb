@@ -23,14 +23,14 @@
                   </form>
                 </div>
                 <%end%>
+                <%if @org.user_id == @user.id%>
                 <div class="join">
                   <form class="btn waves-effect waves-light" action="/organizations/edit" method="post">
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <input type="hidden" name="id" value="<%=@org.id%>">
-                    <input type="submit" name="" value="Edit">
+                    <input type="submit" name="" value="Admin Controllers">
                   </form>
                 </div>
-                <%if @org.user_id == @user.id%>
                 <div class="join">
                   <form class="btn waves-effect waves-light" action="/new_member" method="post">
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="register">
+      <div class="admin-edit">
         <form class="" action="/organizations/<%=@org.id%>" method="post">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
           <input name="_method" type="hidden" value="patch" />
@@ -14,7 +14,7 @@
           <label>Description:</label>
           <input type="text" name="organization[description]" value="">
           <label>School Admin:</label>
-          <input type="text" name="organization[school_admin]" value="">
+          <!-- <input type="text" name="organization[school_admin]" value=""> -->
           <input type="file" name="organization[avatar]" value="">
           <input type="file" name="organization[avatar2]" value="">
           <input type="submit" name="name" value="go">
@@ -32,11 +32,25 @@
                 <th>Status:</th>
               </tr>
               <%@members.each do |x|%>
+              <tr>
               <td><%=x.first_name%> <%=x.last_name%></td>
               <td><%=x.email%></td>
-              <td><%=x.status%></td>
-              <td><%= link_to('Remove User', remove_from_org , class: "waves-effect waves-light btn" )%></ld>
+
+              <%if x.status == 0
+                  @status = "Active Member"
+                elsif x.status == 1
+                  @status = "Member"
+                elsif x.status == 2
+                  @status = "Alumni"
+                end%>
+              <td><%=@status%></td>
+              <td><form class="waves-effect waves-light btn" action="remove_from_org" method="post">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <input type="hidden" name="id" value="<%=x.id%>">
+                <input type="submit" name="" value="Banish Member">
+              </form></td>
               <%end%>
+            </tr>
           </table>
           <%end%>
         </div>

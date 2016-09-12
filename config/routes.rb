@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get '/search' => 'users#search'
   get '/chongdae' => 'organizations#chongdae'
   get '/new_member' => 'organizations#new_member'
-  get '/remove_from_org' => 'organization#remove_from_org'
 
+  post '/organizations/remove_from_org' => 'organizations#remove_from_org'
   post '/sign_in' => 'devise/sessions#create'
   post'/new_member' => 'organizations#new_member'
   post '/organizations/edit' => 'organizations#edit'
