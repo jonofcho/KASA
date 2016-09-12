@@ -66,7 +66,7 @@ class OrganizationsController < ApplicationController
 
   private
   def org_params
-    params.require(:organization).permit(:user_id, :name, :description, :school_admin, :school_origin, :avatar, :avatar2, :avatar3)
+    params.require(:organization).permit(:user_id, :name, :description, :school_admin, :school_origin, :avatar, :avatar2, :avatar3, :video_url)
   end
 
 
