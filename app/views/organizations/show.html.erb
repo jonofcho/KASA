@@ -70,19 +70,15 @@
            <div class="logistics">
              <h3 class="">Logistics:</h3>
              <%if x = @org.logistic%>
-             <h4 class="">Meeting Location: <div class="info"><strong><%=x.meeting_location%></strong></div> </h4>
-             <h4 class="">Next Meeting Date: <div class="info"><strong><%=x.next_meeting%></strong></div></h4>
-             <h4 class="">Time: <div class="info"><strong><%=x.time%></strong></div></h4>
+             <h4 class="">Meeting Location: <div class="info"><strong><h5><%=x.meeting_location%></h5></strong></div> </h4>
+             <h4 class="">Next Meeting Date: <div class="info"><strong><h5><%=x.next_meeting%></h5></strong></div></h4>
+             <h4 class="">Time: <div class="info"><strong><h5><%=x.time%></strong></h5></div></h4>
              <%end%>
            </div>
            <%if @org.video_url%>
-           <div id="org-video">
-             <iframe  width="700" height="315" src="<%=@org.video_url%>" frameborder="0" allowfullscreen></iframe>
-           </div>
-           <%else%>
-            <p>
-              Need to Add Video
-            </p>
+             <div id="org-video">
+               <iframe  width="700" height="315" src="<%=@org.video_url%>" frameborder="0" allowfullscreen></iframe>
+             </div>
            <%end%>
          </div>
        </div>
