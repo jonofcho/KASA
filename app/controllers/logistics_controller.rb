@@ -3,7 +3,7 @@ class LogisticsController < ApplicationController
   def update
     @org = Organization.find(params[:id])
     if @logistic = Logistic.find_by_organization_id(params[:id])
-      @logistic.update_attributes(org_params)
+      @logistic.update_attributes(logistic_params)
       redirect_to @org
     else
       @logistic = Logistic.create(logistic_params)
