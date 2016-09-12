@@ -65,13 +65,15 @@
        <div class="parallax-container">
          <div class="parallax"><img src="<%=@org.avatar2%>" style="width:100%"; "height:200px"></div>
        </div>
-       <div id="logistics" class="section scrollspy">
-         <h4 class="right-align">Logistics:</h4>
-         <%if x = @org.logistic%>
-         <h6 class="right-align">Meeting Location: <%=x.meeting_location%></h6>
-         <h6 class="right-align">Next Meeting Date: <%=x.next_meeting%></h6>
-         <h6 class="right-align">Time: <%=x.time%></h6>
-         <%end%>
+       <div class="section white">
+         <div id="logistics" class="section scrollspy">
+           <h4 class="left-align">Logistics:</h4>
+           <%if x = @org.logistic%>
+           <h6 class="left-align">Meeting Location: <div class="info"><strong><%=x.meeting_location%></strong></div> </h6>
+           <h6 class="left-align">Next Meeting Date: <div class="info"><strong><%=x.next_meeting%></strong></div></h6>
+           <h6 class="left-align">Time: <div class="info"><strong><%=x.time%></strong></div></h6>
+           <%end%>
+         </div>
        </div>
        <div id="ourmembers" class="section scrollspy">
          <h4 class="center-align">Our Members:</h4>
