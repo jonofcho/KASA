@@ -12,7 +12,7 @@
           <input name="_method" type="hidden" value="patch" />
           <input type="hidden" name="id" value="<%=@org.id%>">
           <label>Description:</label>
-          <input type="text" name="organization[description]" value="">
+          <input type="text" name="organization[description]" value="<%=@org.description%>">
           <!-- <label>School Admin:</label> -->
           <!-- <input type="text" name="organization[school_admin]" value=""> -->
           <div class="field">
@@ -38,7 +38,7 @@
             <p>
               3. Highlight and copt only the text BETWEEN the quotation marks (src="example.video/qogoebr")
             </p>
-            <input type="text" name="organization[video_url]" placeholder="Place That Portion here.">
+            <input type="text" name="organization[video_url]" value="<%=@org.video_url%>">
           </div>
           <input type="submit" name="name" value="go">
         </form>

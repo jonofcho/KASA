@@ -11,22 +11,6 @@
         <% if @users %>
           <%= render search_path %>
         <% end %>
-           <div class="col s12">
-             <form class="post-field" action="/posts" method="post">
-               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-               <input type="hidden" name="user_id" value="<%=@user.id%>">
-               <p>
-                 <input name="group1" type="radio" id="test1" value="1"/>
-                 <label for="test1">To Chongdae</label>
-               </p>
-               <p>
-                 <input name="group1" type="radio" id="test2" value="2"/>
-                 <label for="test2">To your Kasa</label>
-               </p>
-               <input type="text" name="post[text]" placeholder="Write your message...">
-               <input type="submit" name="name" value="Post">
-             </form>
-           </div>
          </div>
          <div class="notices">
            <div class="row">
@@ -51,7 +35,24 @@
            </div>
          </div>
        </div>
-       <%if current_user.id = 1%>
+
+       <div class="col s12">
+         <form class="post-field" action="/posts" method="post">
+           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+           <input type="hidden" name="user_id" value="<%=@user.id%>">
+           <p>
+             <input name="group1" type="radio" id="test1" value="1"/>
+             <label for="test1">To Chongdae</label>
+           </p>
+           <p>
+             <input name="group1" type="radio" id="test2" value="2"/>
+             <label for="test2">To your Kasa</label>
+           </p>
+           <input type="text" name="post[text]" placeholder="Write your message...">
+           <input type="submit" name="name" value="Post">
+         </form>
+       </div>
+       <%if current_user.id == 1%>
         <%=link_to('Create Organization', new_organization_path)%>
         <%end%>
     </div>
