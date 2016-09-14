@@ -8,16 +8,12 @@
 .buttons{
   margin-left: 5%;
 }
-.org-cards{
-  margin-left: 5%;
-  border-radius: 10%;
-
-}
 .card{
   display:inline-block;
   vertical-align: top;
   width: 250px;
   height: 300px;
+  background-color: #1E2022;
   .card-content{
     text-align: center;
     width: 100%;
@@ -58,4 +54,40 @@ body{
 #org-video{
   display: inline-block;
   vertical-align: top;
+}
+#ourmembers{
+  padding:0 5% 0 5%;
+}
+.member-card{
+
+  color: black;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  background-color: #FFFFFF;
+  width: 31%;
+  height: 100px;
+  display: inline-block;
+  vertical-align: top;
+  img{
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+  }
+  .member-info{
+    vertical-align: top;
+    padding-top: 3%;
+    padding-left: 2%;
+    height: 100%;
+    display: inline-block;
+    strong{
+      display: block;
+    }
+    a{
+      display: block;
+      width: 100%;
+    }
+  }
+  .modal-content{
+  
+  }
 }

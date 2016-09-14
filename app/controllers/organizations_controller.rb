@@ -14,7 +14,7 @@ class OrganizationsController < ApplicationController
       status = "Active Member"
     elsif status == 2
       status = "Member"
-    else
+    elsif status == 3
       status = "Alumni"
     end
   end

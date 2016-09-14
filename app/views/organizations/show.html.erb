@@ -84,30 +84,28 @@
        </div>
        <div id="ourmembers" class="section scrollspy">
          <h4 class="center-align">Our Members:</h4>
-         <div class="divider"></div>
-         <div class="users">
-           <div class="row">
-             <div class="org-cards">
+
                <%@member.each do |x|%>
-                 <div class="col s3">
-                   <a href="/users/<%=x.id%>">
-                     <div class="card z-depth-4">
-                       <div class="card-image">
-                         <%= image_tag x.avatar.url(:medium), class:"circle" %>
-                       </div>
-                       <div class="card-content">
-                         <strong><%=x.first_name%> <%=x.last_name%> <%=x.status%></strong>
-                         <p>
-                           <%=x.email%>
-                         </p>
-                       </div>
+               <div class="member-card z-depth-2">
+                 <a href="/users/<%=x.id%>">
+                 <img src="<%=x.avatar%>"/>
+                 </a>
+                 <div class="member-info">
+                   <strong><%=x.first_name.capitalize!%> <%=x.last_name.capitalize!%></strong>
+                   <button data-target="modal1" class="btn modal-trigger" id="<%=x.id%>" >About Me</button>
+                   <div id="modal1" class="modal">
+                     <div class="modal-content">
+                       <img src="<%=x.avatar%>" alt="" height="300px" width="350px"/>
+                       <h4><%=x.first_name.capitalize!%></h4>
                      </div>
-                   </a>
+                     <div class="modal-footer">
+                       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                     </div>
+                   </div>
                  </div>
+               </div>
                <%end%>
-             </div>
-           </div>
-         </div>
+
        </div>
     </div>
   </body>
