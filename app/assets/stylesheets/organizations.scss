@@ -10,14 +10,19 @@
 }
 .org-cards{
   margin-left: 5%;
+  border-radius: 10%;
+
 }
 .card{
   display:inline-block;
   vertical-align: top;
   width: 250px;
   height: 300px;
-  strong{
+  .card-content{
     text-align: center;
+    width: 100%;
+    background-color: #eeeeee;
+    color: #1F2021;
   }
 }
 h1{
