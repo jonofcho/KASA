@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     def create_new_member
       @org = Organization.find_by_id(current_user.org_id)
       @new_member = User.create(new_member_params)
+      @new_member.status = 1
       if @new_member.save
         flash[:message] = "Successful member sign-up! Go again"
         redirect_to :back

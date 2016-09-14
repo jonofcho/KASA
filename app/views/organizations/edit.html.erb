@@ -72,11 +72,11 @@
               <td><%=x.first_name%> <%=x.last_name%></td>
               <td><%=x.email%></td>
 
-              <%if x.status == 0
+              <%if x.status == 1
                   @status = "Active Member"
-                elsif x.status == 1
-                  @status = "Member"
                 elsif x.status == 2
+                  @status = "Member"
+                elsif x.status == 3
                   @status = "Alumni"
                 end%>
               <td><%=@status%></td>

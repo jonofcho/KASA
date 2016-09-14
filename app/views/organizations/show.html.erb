@@ -91,12 +91,15 @@
                <%@member.each do |x|%>
                  <div class="col s3">
                    <a href="/users/<%=x.id%>">
-                     <div class="card">
+                     <div class="card z-depth-4">
                        <div class="card-image">
-                         <%= image_tag x.avatar.url(:medium) %>
+                         <%= image_tag x.avatar.url(:medium), class:"circle" %>
                        </div>
                        <div class="card-content">
-                         <strong><%=x.first_name%></strong>
+                         <strong><%=x.first_name%> <%=x.last_name%> <%=x.status%></strong>
+                         <p>
+                           <%=x.email%>
+                         </p>
                        </div>
                      </div>
                    </a>

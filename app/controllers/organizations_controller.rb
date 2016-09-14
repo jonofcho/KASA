@@ -7,6 +7,16 @@ class OrganizationsController < ApplicationController
       @chongdae = Organization.find_by_name("Chongdae")
     end
     @kasa = Organization.find_by_id(@user.org_id)
+
+  end
+  def status(status)
+    if status == 1
+      status = "Active Member"
+    elsif status == 2
+      status = "Member"
+    else
+      status = "Alumni"
+    end
   end
 
   def index
@@ -27,7 +37,7 @@ class OrganizationsController < ApplicationController
     @org = Organization.find(params[:id])
     @user = current_user
     x = User.update(@user.id, org_id: @org.id)
-    x.status = 1
+    x.status = 2
     x.save
     redirect_to @org
   end
