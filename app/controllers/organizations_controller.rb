@@ -9,15 +9,6 @@ class OrganizationsController < ApplicationController
     @kasa = Organization.find_by_id(@user.org_id)
 
   end
-  def status(status)
-    if status == 1
-      status = "Active Member"
-    elsif status == 2
-      status = "Member"
-    elsif status == 3
-      status = "Alumni"
-    end
-  end
 
   def index
   end

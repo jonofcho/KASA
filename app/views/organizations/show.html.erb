@@ -90,7 +90,8 @@
                  <a href="/users/<%=x.id%>">
                  <img src="<%=x.avatar%>"/>
                  <div class="member-info">
-                   <strong><%=x.first_name.capitalize!%> <%=x.last_name.capitalize!%></strong>
+                   <%=x.first_name.capitalize%> <%=x.last_name.capitalize%>
+                   <p><%=x.status%></p>
                  </div>
                  </a>
                </div>

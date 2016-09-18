@@ -8,6 +8,10 @@
 .buttons{
   margin-left: 5%;
 }
+.organizations{
+  padding-left: 5%;
+  padding-right: 5%;
+}
 .card{
   display:inline-block;
   vertical-align: top;
@@ -79,15 +83,6 @@ body{
     padding-left: 2%;
     height: 100%;
     display: inline-block;
-    strong{
-      display: block;
-    }
-    a{
-      display: block;
-      width: 100%;
-    }
-  }
-  .modal-content{
-  
+    color: black;
   }
 }
