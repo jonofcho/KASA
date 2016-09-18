@@ -84,19 +84,22 @@
        </div>
        <div id="ourmembers" class="section scrollspy">
          <h4 class="center-align">Our Members:</h4>
-
-               <%@member.each do |x|%>
-               <div class="member-card z-depth-2">
-                 <a href="/users/<%=x.id%>">
-                 <img src="<%=x.avatar%>"/>
-                 <div class="member-info">
-                   <%=x.first_name.capitalize%> <%=x.last_name.capitalize%>
-                   <p><%=x.status%></p>
-                 </div>
-                 </a>
-               </div>
-               <%end%>
-
+           <%@member.each do |x|%>
+           <div class="member-card z-depth-2">
+             <a href="/users/<%=x.id%>">
+             <img src="<%=x.avatar%>"/>
+             <div class="member-info">
+               <%=x.first_name.capitalize%> <%=x.last_name.capitalize%>
+               <p><%=x.status%></p>
+             </div>
+             </a>
+           </div>
+           <%end%>
+       </div>
+       <div class="fixed-action-btn" style="bottom: 20px; right: 20px;">
+         <a class="btn-floating btn-large #1e2022" style="width: 55px;">
+           <i class="large material-icons">mode_edit</i>
+         </a>
        </div>
     </div>
   </body>
