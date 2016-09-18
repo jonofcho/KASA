@@ -89,20 +89,10 @@
                <div class="member-card z-depth-2">
                  <a href="/users/<%=x.id%>">
                  <img src="<%=x.avatar%>"/>
-                 </a>
                  <div class="member-info">
                    <strong><%=x.first_name.capitalize!%> <%=x.last_name.capitalize!%></strong>
-                   <button data-target="modal1" class="btn modal-trigger" id="<%=x.id%>" >About Me</button>
-                   <div id="modal1" class="modal">
-                     <div class="modal-content">
-                       <img src="<%=x.avatar%>" alt="" height="300px" width="350px"/>
-                       <h4><%=x.first_name.capitalize!%></h4>
-                     </div>
-                     <div class="modal-footer">
-                       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                     </div>
-                   </div>
                  </div>
+                 </a>
                </div>
                <%end%>
 
