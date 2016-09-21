@@ -6,7 +6,35 @@
   </head>
   <%@sessions_index = true%>
   <body>
-    <header>
+  <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+        <a href="#" class="brand-logo">Korean American Student Association</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <li class="field">
+            <input type="text" name="user[email]" placeholder="E-mail">
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Sign up", new_registration_path(resource_name) %>
+            <% end -%>
+          </li>
+          <li class="">
+            <input type="password" name="user[password]" placeholder="Password">
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+            <% end -%>
+          </li>
+          <li class="action">
+            <%= f.submit "Log in" %>
+          </li>
+          <% end %>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </nav>
+    <!-- <header>
         <div class="title">Korean American Student Association</div>
         <div class="login">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,12 +50,13 @@
           </div>
           <% end %>
         </div>
-    </header>
+    </header> -->
   <div class="container">
     <div class="images">
       <img src="https://cdn.vor.us/event/316922/og/4402c73d79fb40389881ae6210dd74ff.image!jpeg.1024718.jpg.IMG_9560.jpg">
     </div>
   </div>
+
     <footer>
       <p>Head Developer: Jonathan Cho</p>
       <p>Front End Developer: Joey Donggo Lee</p>
