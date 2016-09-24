@@ -13,19 +13,21 @@
         <div class="input-field">
         <a href="#!" class="brand-logo">Korean American Student Association</a>
         <a href="#" data-activates="mobile-Menu" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <li class="field">
-            <input type="text" name="user[email]" placeholder="E-mail">
-          </li>
-          <li class="field">
-            <input type="password" name="user[password]" placeholder="Password">
-          </li>
-          <li class="action">
-            <%= f.submit "Log in" %>
-          </li>
-          <% end %>
-          </ul>
+      
+          <div class="login">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <input type="text" name="user[email]" placeholder="E-mail">
+            </div>
+            <div class="field">
+              <input type="password" name="user[password]" placeholder="Password">
+            </div>
+            <div class="action">
+              <%= f.submit "Log in" %>
+              <%= render "devise/shared/links" %>
+            </div>
+            <% end %>
+          </div>
 
           <ul class="side-nav #212121 grey darken-4" id="mobile-Menu">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
