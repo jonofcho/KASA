@@ -1,33 +1,33 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <%@sessions_index = true%>
-  <body>
+  <body id="homepage">
   <div class="navbar-fixed">
     <nav>
     <div class="nav-wrapper">
-      <form>
         <div class="input-field">
-        <a href="#!" class="brand-logo">Korean American Student Association</a>
+        <a href="#!" class="brand-logo">K.A.S.A</a>
         <a href="#" data-activates="mobile-Menu" class="button-collapse"><i class="material-icons">menu</i></a>
-      
-          <div class="login">
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="field">
-              <input type="text" name="user[email]" placeholder="E-mail">
-            </div>
-            <div class="field">
-              <input type="password" name="user[password]" placeholder="Password">
-            </div>
-            <div class="action">
-              <%= f.submit "Log in" %>
-              <%= render "devise/shared/links" %>
-            </div>
-            <% end %>
-          </div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <li class="field">
+            <input type="text" name="user[email]" placeholder="E-mail">
+          </li>
+          <li class="field">
+            <input type="password" name="user[password]" placeholder="Password">
+          </li>
+          <li class="action">
+            <%= f.submit "Log in" %>
+          </li>
+          <li>
+            <a href="/users/sign_up"> Sign up</a>
+          </li>
+          <% end %>
+          </ul>
 
           <ul class="side-nav #212121 grey darken-4" id="mobile-Menu">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -39,11 +39,11 @@
             </li>
             <li class="action">
               <%= f.submit "Log in" %>
+              <%= render "devise/shared/links" %>
             </li>
             <% end %>
           </ul>
         </div>
-      </form>
     </div>
     </nav>
   </div>
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-<footer class="page-footer #212121 grey darken-4">
+<footer class="page-footer #212121 grey darken-4" style="padding-top: 0">
           <div class="container">
             <div class="row">
               <div class="col l12 s12">
