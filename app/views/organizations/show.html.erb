@@ -90,7 +90,14 @@
              <img src="<%=x.avatar%>"/>
              <div class="member-info">
                <%=x.first_name.capitalize%> <%=x.last_name.capitalize%>
-               <p><%=x.status%></p>
+               <%if x.status == 2%>
+                    <%@title = "Member"%>
+                    <%elsif x.status == 1%>
+                      <%@title = "Active Member"%>
+                    <%else%>
+                      <%@title = "Alumni"%>
+                    <%end%>
+               <p><%=@title%></p>
              </div>
              </a>
            </div>

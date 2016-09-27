@@ -7,7 +7,6 @@ class OrganizationsController < ApplicationController
       @chongdae = Organization.find_by_name("Chongdae")
     end
     @kasa = Organization.find_by_id(@user.org_id)
-
   end
 
   def index
