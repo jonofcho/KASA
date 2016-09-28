@@ -10,9 +10,9 @@
     <nav>
     <div class="nav-wrapper">
         <div class="input-field">
-        <a href="#!" class="brand-logo">K.A.S.A</a>
+        <a href="#!" class="brand-logo">Korean American Student Association</a>
         <a href="#" data-activates="mobile-Menu" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <ul class="right hide-on-med-and-down">
            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <li class="field">
             <input type="text" name="user[email]" placeholder="E-mail">
@@ -21,10 +21,12 @@
             <input type="password" name="user[password]" placeholder="Password">
           </li>
           <li class="action">
-            <%= f.submit "Log in" %>
+            <%= f.submit "Log in", :class => 'btn #424242 grey darken-3'%>
           </li>
           <li>
-            <a href="/users/sign_up"> Sign up</a>
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Sign up", new_registration_path(resource_name), :class => 'waves-effect waves-light btn #424242 grey darken-3' %>
+            <% end -%>
           </li>
           <% end %>
           </ul>
@@ -38,7 +40,7 @@
               <input type="password" name="user[password]" placeholder="Password">
             </li>
             <li class="action">
-              <%= f.submit "Log in" %>
+              <%= f.submit "Log in", :class => 'btn #424242 grey darken-3'%>
               <%= render "devise/shared/links" %>
             </li>
             <% end %>
