@@ -134,7 +134,11 @@ body{
   padding-right: 1em;
 }*/
 .images{
+  width: 100%;
   background-color: #333333;
+  img{
+    width: 100%;
+  }
 }
 footer{
   text-align:center;
